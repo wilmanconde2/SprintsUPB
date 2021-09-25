@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro</title>
+    <link rel="stylesheet" href="./css/estilos.css" />
+    <script src="./js/form.js"></script>
+  </head>
+
+  <body>
+    <div id="container-form">
+      <form id="form-registro" method="post" onsubmit="validate();">
+        <fieldset>
+          <legend>Registro Tripulante</legend>
+
+          <div class="form-group" id="grupo_nombre">
+            <label for="nombre" class="campo">Nombre</label><br />
+            <input
+              id="nombre"
+              type="text"
+              name="nombre"
+              placeholder="Juan"
+              onblur="checkNombre(this.value)"
+              required
+            />
+            <div id="nom-sec"></div>
+          </div>
+
+          <br />
+
+          <div class="form-group" id="grupo_apellido">
+            <label for="apellido" class="campo">Apellido</label><br />
+            <input
+              id="apellido"
+              type="text"
+              name="apellido"
+              placeholder="Perez"
+              onblur="checkApellido(this.value)"
+              required
+            />
+            <div id="ape-sec"></div>
+          </div>
+
+          <br />
+
+          <div class="form-group" id="grupo_telefono">
+            <label for="telefono" class="campo">Telefono</label><br />
+            <input
+              id="telefono"
+              type="tel"
+              name="telefono"
+              placeholder="3103222025"
+              onblur="checkTelefono(this.value)"
+              required
+            />
+            <div id="tel-sec"></div>
+          </div>
+
+          <br />
+
+          <div class="form-group" id="grupo_email">
+            <label for="email" class="campo">Correo</label><br />
+            <input
+              id="email"
+              type="email"
+              name="email"
+              placeholder="tucorreo@domain.com"
+              onblur="checkCorreo(this.value)"
+              required
+            />
+            <div id="cor-sec"></div>
+          </div>
+
+          <br />
+
+          <div class="form-group" id="grupo_password">
+            <label for="password" class="campo">Contraseña</label><br />
+            <input
+              id="password"
+              type="password"
+              name="password"
+              placeholder="xxxxxxxx"
+              onblur="checkContrasena(this.value)"
+              required
+            />
+            <div id="con-sec"></div>
+          </div>
+          <hr />
+          <input id="btn-submit-form" type="submit" value="Enviar" />
+        </fieldset>
+      </form>
+    </div>
+    <div id="navigation"><a href="index.html">Regresar</a></div>
+
+    <footer>
+      <div id="footer">MINTIC 2021 - Wilman Conde</div>
+    </footer>
+  </body>
+</html>
