@@ -1,6 +1,6 @@
 "use strict";
 
-function checkNombre() {
+const checkNombre = () => {
   let nombre = document.getElementById("nombre");
   if (nombre.value.length == 0) {
     document.getElementById("nom-sec").innerHTML =
@@ -22,7 +22,7 @@ function checkNombre() {
   }
 }
 
-function checkApellido() {
+const checkApellido = () => {
   let apellido = document.getElementById("apellido");
   if (apellido.value.length == 0) {
     document.getElementById("ape-sec").innerHTML =
@@ -44,7 +44,7 @@ function checkApellido() {
   }
 }
 
-function checkTelefono() {
+const checkTelefono = () => {
   let telefono = document.getElementById("telefono");
   if (telefono.value.length == 0) {
     document.getElementById("tel-sec").innerHTML =
@@ -66,7 +66,7 @@ function checkTelefono() {
   }
 }
 
-function checkCorreo() {
+const checkCorreo = () => {
   let email = document.getElementById("email");
   let regex = /^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,3})$/;
   if (email.value.length == 0 || email.value === "" || email.value === null) {
@@ -89,7 +89,7 @@ function checkCorreo() {
   }
 }
 
-function checkContrasena() {
+const checkContrasena = () => {
   let validacion = document.getElementById("password");
   if (
     /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])([^\s]){8,25}$/gm.test(validacion.value)
@@ -107,7 +107,7 @@ function checkContrasena() {
   }
 }
 
-function validate() {
+const validate = () => {
   checkNombre();
   checkApellido();
   checkTelefono();
