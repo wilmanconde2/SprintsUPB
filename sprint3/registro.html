@@ -4,14 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registro</title>
     <link rel="stylesheet" href="./css/estilos.css" />
-    <script src="./js/form.js"></script>
+    <title>Registro</title>
   </head>
 
   <body>
     <div id="container-form">
-      <form id="form-registro" method="post" onsubmit="validate();">
+      <form id="form-registro" >
         <fieldset>
           <legend>Registro Tripulante</legend>
 
@@ -21,9 +20,8 @@
               id="nombre"
               type="text"
               name="nombre"
+              class="input"
               placeholder="Juan"
-              onblur="checkNombre(this.value)"
-              required
             />
             <div id="nom-sec"></div>
           </div>
@@ -36,9 +34,8 @@
               id="apellido"
               type="text"
               name="apellido"
+              class="input"
               placeholder="Perez"
-              onblur="checkApellido(this.value)"
-              required
             />
             <div id="ape-sec"></div>
           </div>
@@ -51,9 +48,8 @@
               id="telefono"
               type="tel"
               name="telefono"
+              class="input"
               placeholder="3103222025"
-              onblur="checkTelefono(this.value)"
-              required
             />
             <div id="tel-sec"></div>
           </div>
@@ -66,9 +62,8 @@
               id="email"
               type="email"
               name="email"
-              placeholder="tucorreo@domain.com"
-              onblur="checkCorreo(this.value)"
-              required
+              class="input"
+              placeholder="tucorreo@domain.abc"
             />
             <div id="cor-sec"></div>
           </div>
@@ -77,18 +72,23 @@
 
           <div class="form-group" id="grupo_password">
             <label for="password" class="campo">Contraseña</label><br />
-            <input
-              id="password"
-              type="password"
-              name="password"
-              placeholder="xxxxxxxx"
-              onblur="checkContrasena(this.value)"
-              required
-            />
+            <input id="password" type="password" name="password" class="input"
+            placeholder="xxxxxxxx" );" /> />
             <div id="con-sec"></div>
           </div>
           <hr />
-          <input id="btn-submit-form" type="submit" value="Enviar" />
+
+          <div class="item boton">
+            <button
+              type="reset"
+              id="btn-submit-form"
+              value="Limpiar Formulario"
+              name="save"
+              onclick="agregarRegistro()"
+            >
+              Registrarme
+            </button>
+          </div>
         </fieldset>
       </form>
     </div>
@@ -96,6 +96,8 @@
 
     <footer>
       <div id="footer">MINTIC 2021 - Wilman Conde</div>
+      <script type="text/javascript" src="/js/form.js"></script>
+      <script type="text/javascript" src="/js/registro.js"></script>
     </footer>
   </body>
 </html>

@@ -1,4 +1,3 @@
-"use strict";
 
 const checkNombre = () => {
   let nombre = document.getElementById("nombre");
@@ -20,7 +19,7 @@ const checkNombre = () => {
     nombre.style.border = "2px solid #87cefa";
     return true;
   }
-}
+};
 
 const checkApellido = () => {
   let apellido = document.getElementById("apellido");
@@ -42,7 +41,7 @@ const checkApellido = () => {
     apellido.style.border = "2px solid #87cefa";
     return true;
   }
-}
+};
 
 const checkTelefono = () => {
   let telefono = document.getElementById("telefono");
@@ -64,14 +63,14 @@ const checkTelefono = () => {
     telefono.style.border = "2px solid #f50808";
     return false;
   }
-}
+};
 
 const checkCorreo = () => {
   let email = document.getElementById("email");
   let regex = /^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,3})$/;
   if (email.value.length == 0 || email.value === "" || email.value === null) {
     document.getElementById("cor-sec").innerHTML =
-    "<div class='error'>Campo Correo Requerido</div>";
+      "<div class='error'>Campo Correo Requerido</div>";
     console.log(false);
     email.style.border = "2px solid #f50808";
     return false;
@@ -82,12 +81,12 @@ const checkCorreo = () => {
     return true;
   } else {
     document.getElementById("cor-sec").innerHTML =
-    "<div class='error'>Ingrese correo valido</div>";
+      "<div class='error'>Ingrese correo valido</div>";
     console.log(false);
     email.style.border = "2px solid #f50808";
     return false;
   }
-}
+};
 
 const checkContrasena = () => {
   let validacion = document.getElementById("password");
@@ -105,6 +104,41 @@ const checkContrasena = () => {
     validacion.style.border = "2px solid #f50808";
     return false;
   }
+};
+
+const miFormulario = document.getElementById("form-registro");
+miFormulario.addEventListener("submit", (e) => {
+  e.preventDefault();
+});
+
+function agregarRegistro() {
+  if (typeof arreglocompuesto === "undefined") {
+    globalThis.arreglocompuesto = new Array();
+  }
+
+  let arreglo = {
+    nombre: document.getElementById("nombre").value,
+    apellido: document.getElementById("apellido").value,
+    telefono: document.getElementById("telefono").value,
+    correo: document.getElementById("correo").value,
+    password: document.getElementById("password").value,
+  };
+  arreglocompuesto.push(arreglo);
+  console.log(arreglocompuesto);
+  ordenar(arreglocompuesto);
+}
+
+function ordenar(arregloordenado) {
+  arregloordenado.sort(function (a, b) {
+    if (a.apellido > b.apellido) {
+      return 1;
+    }
+    if (a.apellido < b.apellido) {
+      return -1;
+    }
+    // a must be equal to b
+    return 0;
+  });
 }
 
 const validate = () => {
@@ -113,7 +147,9 @@ const validate = () => {
   checkTelefono();
   checkCorreo();
   checkContrasena();
-}
+  agregarRegistro();
+  // ordenar(arreglocompuesto);
+};
 
 module.exports = {
   checkNombre,
@@ -121,4 +157,6 @@ module.exports = {
   checkTelefono,
   checkCorreo,
   checkContrasena,
+  agregarRegistro,
+  validate,
 };

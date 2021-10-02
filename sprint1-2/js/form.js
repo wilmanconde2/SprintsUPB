@@ -107,6 +107,12 @@ const checkContrasena = () => {
   }
 }
 
+const miFormulario = document.getElementById("form-registro");
+
+miFormulario.addEventListener("submit", (e) => {
+  e.preventDefault();
+});
+
 const validate = () => {
   checkNombre();
   checkApellido();
@@ -121,4 +127,5 @@ module.exports = {
   checkTelefono,
   checkCorreo,
   checkContrasena,
+  validate
 };
